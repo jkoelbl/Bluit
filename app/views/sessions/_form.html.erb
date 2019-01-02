@@ -1,0 +1,6 @@
+<%= simple_form_for(:sessions, url: sessions_path) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.button :submit %>
+<% end %>
