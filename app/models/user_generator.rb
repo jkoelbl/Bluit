@@ -4,6 +4,7 @@ class UserGenerator < Struct.new(:user_params)
         @profile = UserProfile.new
         @login = nil
         @user_exists = false
+        
         create_user
         create_user_profile
         create_login
