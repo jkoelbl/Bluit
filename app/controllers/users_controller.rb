@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   include SessionsHelper, UsersHelper
 
   before_action :if_not_logged, :only => [:destroy]
-  before_action :if_logged, :except => [:destroy]
+  before_action :if_logged, :except => [:destroy, :index]
+
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new

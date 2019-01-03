@@ -1,7 +1,8 @@
-<% if not session[:id] %>
-    <%= link_to 'log in', new_session_path %>
-    <%= link_to 'sign up', new_user_path %>
+<% if logged_in? %>
+    <%= link_to 'log out', session_path(session[:id]), method: :delete %> | 
+    <%= link_to 'my profile', user_profile_path(session[:id]) %> | 
+    <%= link_to 'users', users_path %>
 <% else %>
-    <%= link_to 'log out', session_path(session[:id]), method: :delete %>
-    <%= link_to 'delete user', user_path(session[:id]), method: :delete, data: {confirm: 'are you sure'} %>
+    <%= link_to 'log in', new_session_path %> | 
+    <%= link_to 'sign up', new_user_path %>
 <% end %>

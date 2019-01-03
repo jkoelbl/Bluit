@@ -1,0 +1,9 @@
+<h1>Profile</h1>
+
+username: <%= @user.username %><br>
+display name: <%= @profile.display_name %><br>
+strength: <%= @profile.strength %><br>
+about: <p><%= @profile.about %></p>
+
+<%= render 'menu' %>
+<%= link_to 'Home', root_path %>

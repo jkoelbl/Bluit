@@ -1,0 +1,4 @@
+<% if valid_editor? %>
+    <%= link_to 'Edit', edit_user_profile_path(params[:id]) %> |
+    <%= link_to 'Delete Account', user_path(params[:id]), method: :delete, data: {confirm: 'are you sure?'} %> |
+<% end %>

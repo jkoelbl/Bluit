@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate(params[:sessions])
-      login(user)
+      login = {
+        :id => user.id,
+        :username => user.username
+      }
+      login(login)
       redirect_to root_path
     else
       do_error(:bad_request)
