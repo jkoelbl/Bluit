@@ -1,0 +1,8 @@
+<h2><%= @text_post.title %></h2>
+<%= link_to @user.username, user_profile_path(@user.id) %><br>
+
+<p><%= @text_post.content %></p>
+
++<%= @text_post.upvotes %> | -<%= @text_post.downvotes %><br>
+
+<%= render 'menu' %>

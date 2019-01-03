@@ -1,0 +1,7 @@
+<h1>Posts</h1>
+
+<% if logged_in? %>
+    <%= link_to 'Create Post', new_text_post_path %>
+<% end %>
+
+<%= render 'post_list' %>

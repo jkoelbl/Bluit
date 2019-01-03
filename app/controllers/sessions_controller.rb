@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
   
   before_action :if_not_logged, :only => [:destroy]
   before_action :if_logged, :except => [:destroy]

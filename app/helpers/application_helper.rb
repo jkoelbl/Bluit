@@ -15,8 +15,17 @@ module ApplicationHelper
   end
 
   def if_not_logged
-    if not logged_in?
+    if !logged_in?
       do_error(:unauthorized)
     end
+  end
+
+  def get_usernames
+    users = User.all
+    usernames = {}
+    users.each do |u|
+        usernames[u.id] = u.username
+    end
+    return usernames
   end
 end

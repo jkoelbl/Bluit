@@ -1,0 +1,4 @@
+<% if @is_editor %>
+    <%= link_to 'Edit', edit_text_post_path %> | 
+    <%= link_to 'Delete', @text_post, method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>

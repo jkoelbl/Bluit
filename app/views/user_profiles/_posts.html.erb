@@ -1,0 +1,17 @@
+<h2>Recent Posts</h2>
+
+<table>
+    <tr>
+        <th>upvotes</th>
+        <th> | downvotes</th>
+        <th> | title</th>
+    </tr>
+    
+    <% @text_posts.each do |tp| %>
+        <tr>
+            <td><%= tp.upvotes %></td>
+            <td> | <%= tp.downvotes %></td>
+            <td> | <%= link_to tp.title, tp %></td>
+        </tr>
+    <% end %>
+</table>

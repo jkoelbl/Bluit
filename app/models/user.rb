@@ -24,8 +24,7 @@ class User < ApplicationRecord
   private
 
   def destroy_profile
-    profile = self.user_profile
-    if profile
+    if profile = self.user_profile
       profile.destroy
     end
   end

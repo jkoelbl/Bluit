@@ -1,15 +1,13 @@
 module UserProfilesHelper
     include ApplicationHelper
 
-    def valid_editor?
+    def valid_profile_editor?
         return params[:id].to_i == session[:id]
     end
     
-    def validate_editor
-        unless valid_editor?
-            do_error(:unauthorized)
-            return false
-        end
-        return true
+    def validate_profile_editor
+        is_editor = valid_profile_editor?
+        do_error(:unauthorized) if !is_editor
+        return is_editor
     end
 end

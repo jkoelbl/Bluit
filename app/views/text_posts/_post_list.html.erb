@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>upvotes</th>
+        <th> | downvotes</th>
+        <th> | title</th>
+        <th> | user</th>
+    </tr>
+    
+    <% @text_posts.each do |tp| %>
+        <tr>
+            <td><%= tp.upvotes %></td>
+            <td> | <%= tp.downvotes %></td>
+            <td> | <%= link_to tp.title, tp %></td>
+            <td> | <%= link_to @usernames[tp.user_profile_id], user_profile_path(tp.user_profile_id)%></td>
+        </tr>
+    <% end %>
+</table>

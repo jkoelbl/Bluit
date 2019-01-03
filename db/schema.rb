@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190102223156) do
+ActiveRecord::Schema.define(version: 20190103053607) do
+
+  create_table "text_posts", force: :cascade do |t|
+    t.integer "user_profile_id"
+    t.string "title"
+    t.text "content"
+    t.integer "upvotes"
+    t.integer "downvotes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_profile_id"], name: "index_text_posts_on_user_profile_id"
+  end
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer "user_id"
