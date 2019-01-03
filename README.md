@@ -5,5 +5,6 @@ This is a demonstrative website implementing the rails API that I will add to pi
 * Account creation/deletion (with profiles)
 * Action authorization with profile creation/editting
 * User authentication
+* Text Post creation/deletion/modification/Reading
 
 More to come..
