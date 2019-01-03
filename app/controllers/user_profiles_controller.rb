@@ -18,7 +18,7 @@ class UserProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to user_profile_path(params[:id])
     else
-      do_error(:bad_request)
+      redirect_to edit_user_profile_path
     end
   end
 

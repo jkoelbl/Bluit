@@ -18,12 +18,7 @@ class User < ApplicationRecord
   end
 
   def self.new_user?(params)
-    if not User.find_by_username(params[:username])
-      if params[:password] == params[:password_confirmation]
-        return true
-      end
-    end
-    return false
+    return !User.find_by_username(params[:username]) && params[:password] == params[:password_confirmation]
   end
 
   private

@@ -18,7 +18,8 @@ class UsersController < ApplicationController
       login(login_params)
       redirect_to root_path
     else
-      do_json(login_params, :bad_request)
+      generator.degenerate if generator.user_exists?
+      redirect_to new_user_path
     end
   end
 

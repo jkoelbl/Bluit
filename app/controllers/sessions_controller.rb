@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       login(login)
       redirect_to root_path
     else
-      do_error(:bad_request)
+      redirect_to new_session_path
     end
   end
 
