@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if User.new_user?(params) and user.save
-      login(user)
+    generator = UserGenerator.new(user_params)
+    if login_params = generator.generate
+      login(login_params)
       redirect_to root_path
     else
-      do_error(:bad_request)
+      do_json(login_params, :bad_request)
     end
   end
 
@@ -34,7 +34,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :username,
       :email,
-      :password
+      :password,
+      :password_confirmation
     )
   end
 end

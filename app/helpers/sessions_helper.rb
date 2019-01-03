@@ -1,7 +1,7 @@
 module SessionsHelper
-  def login(user)
-    session[:id] = user.id
-    session[:username] = user.username
+  def login(params)
+    session[:id] = params[:id]
+    session[:username] = params[:username]
   end
 
   def logout
